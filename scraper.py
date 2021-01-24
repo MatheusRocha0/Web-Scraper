@@ -1,10 +1,13 @@
+# Importing libraries
 from bs4 import BeautifulSoup as bs
 import requests
 import pandas as pd
 import sqlite3
- 
+
+ # Creating or Connecting to.batabase 
 conn = sqlite3.connect("books.db")
  
+# Creating books table if not exists
 cursor = conn.cursor()
 cursor.execute("""
 CREATE TABLE IF NOT EXISTS books(
@@ -14,7 +17,8 @@ rating INTEGER
 )""")
 conn.commit()
 conn.close()
- 
+
+# Generating urls to scrape
 urls = []
  
 special_url = "http://books.toscrape.com/"
@@ -22,12 +26,12 @@ urls.append(special_url)
 
 for i in range(2, 51):
    urls.append("http://books.toscrape.com/catalogue/page-" + str(i) +".html")
- 
- 
+  
 titles = []
 prices = []
 ratings = []
  
+ # Scraping, saving into CSV and storing to SQLite3 database
 for url in urls:
    get = requests.get(url)
    soup = bs(get.content, "html.parser")
