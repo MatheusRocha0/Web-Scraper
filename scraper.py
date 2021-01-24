@@ -4,7 +4,7 @@ import requests
 import pandas as pd
 import sqlite3
 
- # Creating or Connecting to.batabase 
+ # Creating or Connecting to batabase 
 conn = sqlite3.connect("books.db")
  
 # Creating books table if not exists
@@ -18,7 +18,7 @@ rating INTEGER
 conn.commit()
 conn.close()
 
-# Generating urls to scrape
+# Generating urls
 urls = []
  
 special_url = "http://books.toscrape.com/"
