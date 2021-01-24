@@ -1,7 +1,7 @@
 # Web Scraper
 ![Image](web-scraping.jpeg)
 
-In this project, I developed a Python script able to scrape data (title, price and rating) from a bookstore, generate a CSV file from this data and also store this data into a SQLite3 database.
+In this project, I developed a Python script able to scrape and clean data (title, price and rating) from a bookstore, generate a CSV file from this data and also store this data into a SQLite3 database.
 
 ## Tools
 
