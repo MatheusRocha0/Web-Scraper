@@ -1,10 +1,9 @@
-# Importing libraries
+from time import sleep
 from bs4 import BeautifulSoup as bs
 import requests
 import pandas as pd
 import sqlite3
-
- # Creating or Connecting to batabase 
+ 
 conn = sqlite3.connect("books.db")
  
 # Creating books table if not exists
@@ -17,13 +16,13 @@ rating INTEGER
 )""")
 conn.commit()
 conn.close()
-
-# Generating urls
+ 
+ 
 urls = []
  
 special_url = "http://books.toscrape.com/"
 urls.append(special_url)
-
+ 
 for i in range(2, 51):
    urls.append("http://books.toscrape.com/catalogue/page-" + str(i) +".html")
   
@@ -68,3 +67,4 @@ dict_obj = {
  
 df = pd.DataFrame(dict_obj)
 df.to_csv("books.csv")
+sleep(86400)
