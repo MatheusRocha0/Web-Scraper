@@ -31,4 +31,8 @@ The script I wrote scrapes data from their site, generate a CSV file and also st
 
 4. Run the script.
 
-That is it.
+## Credits
+
+Credits to Meigarom Lopes from Seja Um Data Scientist blog who proposed the idea of this project to the readers.
+
+**That's All**
